@@ -1,0 +1,124 @@
+@font-face {
+    font-family: "atteron";
+    src: url(/Atteron.ttf);
+}  
+@font-face {
+    font-family: aire;
+    src: url(/SVN-Aire\ Pro\ Regular.otf);
+}
+@font-face {
+    font-family: black-mango;
+    src: url(/BlackMango-ExtraBold.otf);
+}
+html {
+    background-color: #262626;
+    scroll-behavior: smooth;
+}
+@keyframes slideUp {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+body {
+    font-family: charm;
+    padding: 0;
+    overflow-x: hidden;
+}
+.nav ul {
+    display: flex;
+    gap: 165px;
+    margin: 20px;
+    list-style-type: none;
+    color: #9C8563;
+    font-size: 22px;
+    font-weight: bolder;
+    z-index: 10; /* Higher z-index */
+    position: relative; /* Ensure it is in a stacking context */
+}
+.nav li a {
+    text-decoration: none;
+    list-style: none;
+    color: #9C8563;
+    z-index: 10; /* Higher z-index */
+}
+.nav li a:hover {
+    text-decoration: underline;
+    color: #9C8563;
+}
+.nav ul img {
+    width: 300px;
+    height: 115px;
+    transform: translateY(-20px);
+    margin-left: -5.5%;
+}
+/* desc.css */
+.blog-title {
+    font-size: 30px;
+    font-family: aire;
+    color: #9C8563;
+    text-align: center;
+}
+.blog-date {
+    font-size: 30px;
+    font-family: aire;
+    color: #E9D6BE;
+    text-align: center;
+}
+.blog-content {
+    font-family: 'charm';
+    font-size: 22px;
+    color: #9C8563;
+}
+.blog-content p {
+    font-family: 'charm';
+    font-size: 22px;
+    color: #9C8563;
+    margin-left: 45px;
+    margin-right: 45px;
+}
+.blog-content li {
+    font-family: 'charm';
+    font-size: 22px;
+    color: #9C8563;
+    margin-left: 45px;
+    margin-right: 45px;
+}
+.blog-content img {
+    display: block;
+    margin: 0 auto;
+    width: 1140px;
+    height: 341px;
+}
+#back-btn {
+    background-color: #9C8563;
+    color: #262626;
+    font-family: black-mango;
+    font-size: 13px;
+    padding: 5px;
+    width: 100px;
+    transform: translateX(590px);
+    /* transform: translateY(3275%);
+    position: relative; */
+}
+.social-media {
+    background-color: #9C8563;
+    color: #262626;
+    font-family: charm;
+    text-align: center;
+    width: 1252px;
+}
+.social-media ul {
+    display: flex;
+    gap: 40px;
+    transform: translateX(41%);
+    list-style-type: none;
+}
+.social-media img {
+    width: 20px;
+    height: 20px;
+}

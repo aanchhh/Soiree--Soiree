@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soiree Soire | YOU</title>
+    <link rel="stylesheet" href="./css/you.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="nav">
+        <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./blogs.html" target="_blank">Blogs</a></li>
+        <li><img src="./images/Soiree (2).png" /></li>
+        <li><a href="./create.html" target="_blank">Create</a></li>
+        <li><a href="./you.html"><u>You</u></a></li>
+        </ul>
+    </div>
+
+    <div class="about-you">
+        <div class="box">
+            <h2>ABOUT YOU</h2>
+            <h4>TELL US ABOUT YOU</h4>
+            <img src="./images/aanchal.jpg" />
+            <textarea id="about-you-bio" rows="9" cols="120" placeholder="Write a little bit about you here..."></textarea>
+            <button>Save!</button>
+        </div>
+    </div>
+
+    <div class="your-account">
+        <div class="box1">
+            <h2>YOUR ACCOUNT</h2>
+            <div class="input-group">
+                <label for="username">Username :</label>
+                <input type="text" id="username" value="aanchalmehta_9">
+            </div>
+            <div class="input-group">
+                <label for="email">E-mail :</label>
+                <input type="email" id="email" value="aanchalmehta.9114@gmail.com">
+            </div>
+            <div class="input-group">
+                <label for="password">Password :</label>
+                <input type="password" id="password" value="*********">
+                <a href="./you.html#password">Reset Password</a>
+            </div>
+            <button class="save-btn">Save!</button>
+        </div>
+    </div>
+
+    <div class="your-blogs">
+        <div class="box1">
+            <h2>SAVED BY YOU</h2>
+            <ol>
+                <li><a href="./blogs.html#blog-card2">Your Guide to become the Best You</a></li>
+                <li><a href="./blogs.html#blog-card4">Manhattan Majesty</a></li>
+                <li><a href="./blogs.html#blog-card1">The benefits of lemons</a></li>
+            </ol>
+        </div>
+        <div class="add"><a href="./blogs.html#blog-cards">See more →</a></div>
+    </div>
+    <div class="back"><a href="./index.html">BACK TO HOME →</a></div>
+
+    <div class="social-media">
+        <h3>Find us on:</h3>
+        <ul>
+            <li><a href="#"><img src="./images/facebook-logo-removebg-preview.png"></a></li>
+            <li><a href="#"><img src="./images/instagram-logo-removebg-preview.png"></a></li>
+            <li><a href="#"><img src="./images/youtube-logo-removebg-preview.png"></a></li>
+        </ul>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const saveButton = document.querySelector('.box button');
+            const bioTextarea = document.getElementById('about-you-bio');
+        
+            // Load the saved bio from localStorage, if any
+            const savedBio = localStorage.getItem('aboutYouBio');
+            if (savedBio) {
+                bioTextarea.value = savedBio;
+            }
+        
+            saveButton.addEventListener('click', function() {
+                const bioContent = bioTextarea.value;
+        
+                // Save the bio content to localStorage
+                localStorage.setItem('aboutYouBio', bioContent);
+        
+                // Generate an alert saying the bio is saved
+                alert('Your bio is saved successfully!');
+            });
+        });
+
+        // Function to save data to local storage
+function saveData() {
+    const username = document.getElementById('username').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    localStorage.setItem('username', username);
+    localStorage.setItem('email', email);
+    localStorage.setItem('password', password);
+
+    alert('Data saved!');
+}
+
+// Function to load data from local storage
+function loadData() {
+    const username = localStorage.getItem('username');
+    const email = localStorage.getItem('email');
+    const password = localStorage.getItem('password');
+
+    if (username) {
+        document.getElementById('username').value = username;
+    }
+    if (email) {
+        document.getElementById('email').value = email;
+    }
+    if (password) {
+        document.getElementById('password').value = password;
+    }
+}
+
+// Add event listener to the save button
+document.querySelector('.save-btn').addEventListener('click', saveData);
+
+// Load data when the page loads
+window.onload = loadData;
+
+</script>
+        
+</body>
+</html>
